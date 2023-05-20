@@ -30,12 +30,11 @@ def recursive_g(n):  # рекурсивное решение
 
 
 def iterative_f(n):
-    gn = [1] * (n + 1)
-    fn = [1] * (n + 1)
-    for i in range(3, n + 1):
-        fn[i] = fn[i - 1] - 2 * gn[i - 1]
-        gn[i] = fn[i - 1] + gn[i - 1]
-    return fn[n]
+    f = 1
+    g = 1
+    for i in range(2, n):
+        f, g = f - 2 * g, f + g
+    return f
 
 try:
     print("Введите натуральное число n >=2")
